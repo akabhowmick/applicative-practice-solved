@@ -2,12 +2,18 @@ import { data } from "../data/data";
 
 // SPACE DATA EXERCISE 11
 // Return an array of Planets' names with less than 10 moons
-// include planets with 0 moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  // Your code goes here...
+  const planets = data.planets;
+  const planetsWithMoons = planets
+    .filter(planet => ('moonsCount' in planet && planet.moonsCount < 10) || !('moonsCount' in planet))
+  const planetNames = []
+  planetsWithMoons.map( planet => planetNames.push(planet.name));
+  return planetNames;
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
