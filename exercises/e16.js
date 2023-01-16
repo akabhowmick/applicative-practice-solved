@@ -3,7 +3,6 @@
 export function find(array, callback) {
   for (let element of array) {
     if (callback(element)) {
-      console.log(element);
       return element;
     }
   }
